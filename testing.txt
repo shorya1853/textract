@@ -1,0 +1,9 @@
+docker run -it -d -p 9000:8080 \
+   -v ./:/var/task \
+   -e AWS_ACCESS_KEY_ID=Your Id num \
+   -e AWS_SECRET_ACCESS_KEY=your key\
+   temp
+
+curl -X POST "http://localhost:9000/2015-03-31/functions/function/invocations" -d @/home/user/Documents/Folder/test/resolving/tesseract-app/event.json
+
+tesseract  --tessdata-dir $TESSDATA_PREFIX ./filled_form.png stdout --oem 2 -l eng
